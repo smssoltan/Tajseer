@@ -1,17 +1,16 @@
-package com.Elm.Tajseer.userService;
-import com.Elm.Tajseer.Model.User1;
-import com.Elm.Tajseer.userRepository.UserRepo;
+package com.Elm.Tajseer.Services;
+import com.Elm.Tajseer.Models.User1;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 
 @org.springframework.stereotype.Service
-public class Service_Implementation implements Service
+public class userService_Implementation implements userService
 {
 
     @Autowired
-    private UserRepo userRepo;
+    private com.Elm.Tajseer.Repositories.userRepo userRepo;
 
 
     @Override

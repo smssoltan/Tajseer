@@ -1,7 +1,7 @@
-package com.Elm.Tajseer.userController;
+package com.Elm.Tajseer.Controllers;
 
-import com.Elm.Tajseer.Model.User1;
-import com.Elm.Tajseer.userService.Service;
+import com.Elm.Tajseer.Models.User1;
+import com.Elm.Tajseer.Services.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,12 +9,10 @@ import java.util.List;
 
 @RestController
       //create 2 paths.
-public class Controller {
+public class userController {
 
     @Autowired
-    private Service Serv_imp;
-
-    //Class
+    private userService Serv_imp;
 
     @PostMapping("/users")
     public User1 addUser(@RequestBody User1 aUser1) { //request body = object

@@ -1,11 +1,11 @@
-package com.Elm.Tajseer.userService;
+package com.Elm.Tajseer.Services;
 
-import com.Elm.Tajseer.Model.User1;
+import com.Elm.Tajseer.Models.User1;
 
 import java.util.List;
 
 @org.springframework.stereotype.Service
-public interface Service {
+public interface userService {
 
 
     public User1 addUser(User1 aUser1);
