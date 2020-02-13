@@ -1,6 +1,10 @@
 package com.Elm.Tajseer.Models;
 
 import javax.persistence.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity //User Entity
 @Table(name = "USER1")
@@ -34,9 +38,11 @@ public class User1 {        // couldn't name it just user because of errors that
     @Column
     private  int orgID;         //Organization ID
 
-//    @ManyToOne
-//    @JoinColumn(name = "user")    //Will join Class table content in a new table.
+    @OneToMany(mappedBy = "user1", fetch = FetchType.LAZY,      //Lazy == on request
+            cascade = CascadeType.ALL)
 
+    // List of added certifications by the user
+    private ArrayList<Certification> certificationsList = new ArrayList<>();
 
     public User1(){}                //empty constructor.
 
@@ -126,5 +132,13 @@ public class User1 {        // couldn't name it just user because of errors that
 
     public void setOrgID(int orgID) {
         this.orgID = orgID;
+    }
+
+    public ArrayList<Certification> getCertificationsList() {
+        return certificationsList;
+    }
+
+    public void setCertificationsList(ArrayList<Certification> certificationsList) {
+        this.certificationsList = certificationsList;
     }
 }

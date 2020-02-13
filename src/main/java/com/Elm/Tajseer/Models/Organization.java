@@ -1,5 +1,7 @@
 package com.Elm.Tajseer.Models;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity //Organization Entity
 @Table(name = "ORGANIZATION")
@@ -19,6 +21,12 @@ public class Organization {
     private int contactNum;         //contact number.
 
 
+    @OneToMany(mappedBy = "orgCertifications", cascade = CascadeType.ALL)
+    private ArrayList<Certification> toBeCertificated = new ArrayList<>(); // a list to be certificated by the organization.
+
+
+    @OneToMany(mappedBy = "usersOrganization", cascade = CascadeType.ALL)
+    private ArrayList<User1> usersList = new ArrayList<>();     // List of users that are asking for certification.
 
     public Organization(){}     //empty constructor.
 
@@ -61,5 +69,21 @@ public class Organization {
 
     public void setContactNum(int contactNum) {
         this.contactNum = contactNum;
+    }
+
+    public ArrayList<Certification> getToBeCertificated() {
+        return toBeCertificated;
+    }
+
+    public void setToBeCertificated(ArrayList<Certification> toBeCertificated) {
+        this.toBeCertificated = toBeCertificated;
+    }
+
+    public ArrayList<User1> getUsersList() {
+        return usersList;
+    }
+
+    public void setUsersList(ArrayList<User1> usersList) {
+        this.usersList = usersList;
     }
 }

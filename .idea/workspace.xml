@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7a012b7-dcf9-4c29-9e0e-9b9944d72871" name="Default Changelist" comment="changed the model to user1, also started using SQL instead of H2.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Controllers/certController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Authority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Certification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Organization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/User1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Repositories/authRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Repositories/certRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Repositories/orgRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Services/certService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Services/certService_Implementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Services/orgService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Services/orgService_Implementation.java" afterDir="false" />
+    <list default="true" id="b7a012b7-dcf9-4c29-9e0e-9b9944d72871" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Shared.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Model/User1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/userController/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Controllers/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/userRepository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Repositories/userRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/userService/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Services/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/userService/Service_Implementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Services/userService_Implementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Certification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Certification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/Organization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/User1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Models/User1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/ClassRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/Model/Class.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/Model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/Service_Implementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/StudentRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Elm/Tajseer/Tajseer/TajseerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Elm/Tajseer/Tajseer/TajseerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Elm/Tajseer/Model/User1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Elm/Tajseer/userController/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Elm/Tajseer/userRepository/UserRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Elm/Tajseer/userService/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Elm/Tajseer/userService/Service_Implementation.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581342709290</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added Models Authority, Organization, Certification, and its repository, services and services implementation files. Also, 1 more controller file named certController.">
+      <created>1581428840880</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581428840880</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,9 +176,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="changed the model to user1, also started using SQL instead of H2." />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the model to user1, also started using SQL instead of H2." />
+    <MESSAGE value="added Models Authority, Organization, Certification, and its repository, services and services implementation files. Also, 1 more controller file named certController." />
+    <option name="LAST_COMMIT_MESSAGE" value="added Models Authority, Organization, Certification, and its repository, services and services implementation files. Also, 1 more controller file named certController." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1581342790866">
@@ -182,10 +196,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581342411208" />
-    <state x="913" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1581428677993">
+    <state x="1040" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1581596864765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="913" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581428677993" />
+    <state x="1040" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581596864765" />
     <state x="689" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581342367468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -198,10 +212,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="333" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581414989968" />
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1581343086010">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1581428839339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581343086010" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581428839339" />
     <state x="78" y="119" width="1736" height="856" key="DiffContextDialog" timestamp="1581330450839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -242,10 +256,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="578" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581342075728" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581343864420">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581428896464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581343864420" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581428896464" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1581342665462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -258,10 +272,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="655" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581403485471" />
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581428715800">
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581599178521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581428715800" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581599178521" />
     <state x="761" y="311" key="git4idea.merge.GitMergeDialog" timestamp="1581343776341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

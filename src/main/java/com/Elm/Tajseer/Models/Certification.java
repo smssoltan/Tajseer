@@ -2,7 +2,7 @@ package com.Elm.Tajseer.Models;
 
 import javax.persistence.*;
 
-@Entity //Organization Entity
+@Entity //Certification  Entity
 @Table(name = "CERTIFICATION")
 public class Certification {
 
@@ -34,6 +34,14 @@ public class Certification {
 
     @Column
     private  int orgID;         //Organization ID
+
+    @ManyToOne(cascade = CascadeType.ALL)   //many to one relation with the user
+    @JoinColumn(name = "UserID")
+    private User1 userWantsCertification;         // a single user asks for one or more certifications to be certificated.
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "OrganizationID")
+    private Organization orgCertification;      // the organization certification.
 
     public Certification(){}        //Empty constructor.
 
@@ -121,5 +129,21 @@ public class Certification {
 
     public void setOrgID(int orgID) {
         this.orgID = orgID;
+    }
+
+    public User1 getUserWantsCertification() {
+        return userWantsCertification;
+    }
+
+    public void setUserWantsCertification(User1 userWantsCertification) {
+        this.userWantsCertification = userWantsCertification;
+    }
+
+    public Organization getOrgCertification() {
+        return orgCertification;
+    }
+
+    public void setOrgCertification(Organization orgCertification) {
+        this.orgCertification = orgCertification;
     }
 }
