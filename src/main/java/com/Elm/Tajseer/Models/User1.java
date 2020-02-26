@@ -1,7 +1,9 @@
 package com.Elm.Tajseer.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -11,134 +13,144 @@ import java.util.Set;
 public class User1 {        // couldn't name it just user because of errors that was caused
 
     @Id         //Prime key column
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;         //Prim key for the table User1
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int userID;         //Prim key for the table User1
 
-    @Column(name = "Name")
+    @Column
     private String fullName;
 
     @Column
-    private  String DoB;        //date of birth
+    private  String dob;        //date of birth
 
     @Column
-    private  int Pnum;      //phone number
+    private  String pNum;      //phone number
 
     @Column
-    private String Email;
+    private String email;
 
     @Column
-    private int Password;
+    private String password;
 
     @Column
-    private int NatID;      //National ID
+    private long natID;
 
-    @Column
-    private int AuthID;     //Authority ID
-
-    @Column
-    private  int orgID;         //Organization ID
-
-    @OneToMany(mappedBy = "user1", fetch = FetchType.LAZY,      //Lazy == on request
-            cascade = CascadeType.ALL)
 
     // List of added certifications by the user
-    private ArrayList<Certification> certificationsList = new ArrayList<>();
+    @OneToMany(targetEntity =Certification.class, mappedBy = "userCertificates", cascade = CascadeType.ALL)
+    private Set<Certification> certificationsList;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "orgID")
+    private Organization usersOrganization;
+
+
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "AuthID")
+    private Authority usersAuthority;
+
+
+
 
     public User1(){}                //empty constructor.
 
-    public User1(int id, String fullName, String DoB, int pnum, String email,
-                 int password, int natID, int authID, int orgID) {             //initializing the class's properties.
-        this.id = id;
-        this.fullName=fullName;
-        this.DoB=DoB;
-        this.Pnum = pnum;
-        this.Email = email;
-        this.Password = password;
-//
-        //this.user= user;
-        this.NatID = natID;
-        this.AuthID = authID;
-        this.orgID = orgID;
+
+    public User1(int userID, String fullName, String dob, String pNum, String email,
+                 String password, long natID, Set<Certification> certificationsList,
+                 Organization usersOrganization, Authority usersAuthority) {
+        this.userID = userID;
+        this.fullName = fullName;
+        this.dob = dob;
+        this.pNum = pNum;
+        this.email = email;
+        this.password = password;
+        this.natID = natID;
+        this.certificationsList = certificationsList;
+        this.usersOrganization = usersOrganization;
+        this.usersAuthority = usersAuthority;
     }
+
+
 
     //setters & getters
 
-    public String getFullName() { return fullName; }
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
-    public int getID() {
-        return id;
+    public String getDob() {
+        return dob;
     }
 
-    public void setID(int id) {
-        this.id = id;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-
-    public String getDoB() {
-        return DoB;
+    public String getpNum() {
+        return pNum;
     }
 
-    public void setDoB(String doB) {
-        DoB = doB;
-    }
-
-    public int getPnum() {
-        return Pnum;
-    }
-
-    public void setPnum(int pnum) {
-        Pnum = pnum;
+    public void setpNum(String pNum) {
+        this.pNum = pNum;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public int getPassword() {
-        return Password;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassword(int password) {
-        this.Password = password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public int getNatID() {
-        return NatID;
+    public long getNatID() {
+        return natID;
     }
 
-    public void setNatID(int natID) {
-        NatID = natID;
+    public void setNatID(long natID) {
+        this.natID = natID;
     }
 
-    public int getAuthID() {
-        return AuthID;
-    }
-
-    public void setAuthID(int authID) {
-        AuthID = authID;
-    }
-
-    public int getOrgID() {
-        return orgID;
-    }
-
-    public void setOrgID(int orgID) {
-        this.orgID = orgID;
-    }
-
-    public ArrayList<Certification> getCertificationsList() {
+    public Set<Certification> getCertificationsList() {
         return certificationsList;
     }
 
-    public void setCertificationsList(ArrayList<Certification> certificationsList) {
+    public void setCertificationsList(Set<Certification> certificationsList) {
         this.certificationsList = certificationsList;
+    }
+
+    public Organization getUsersOrganization() {
+        return usersOrganization;
+    }
+
+    public void setUsersOrganization(Organization usersOrganization) {
+        this.usersOrganization = usersOrganization;
+    }
+
+    public Authority getUsersAuthority() {
+        return usersAuthority;
+    }
+
+    public void setUsersAuthority(Authority usersAuthority) {
+        this.usersAuthority = usersAuthority;
     }
 }

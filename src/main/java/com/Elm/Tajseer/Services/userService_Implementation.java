@@ -35,7 +35,7 @@ public class userService_Implementation implements userService
 
     @Override
     public User1 updateUser(User1 aUser1, int id) {
-        aUser1.setID(id);
+        aUser1.setUserID(id);
         return userRepo.save(aUser1);
     }
 }

@@ -9,7 +9,7 @@ public class Certification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int cerID;
 
     @Column
     private String Name;        //title
@@ -24,47 +24,49 @@ public class Certification {
     private String Date;        // Date of certification. should be null till it got accepted.
 
     @Column
-    private int uID;                 //User ID as foreign key
-
-    @Column
     private String Status;          //Certification status, accepted, rejected, or pending.
 
     @Column
-    private  String Document;           //Type [String] ?
+    private byte[] certificateDocument;           //Type [String] ?
 
-    @Column
-    private  int orgID;         //Organization ID
+
+
 
     @ManyToOne(cascade = CascadeType.ALL)   //many to one relation with the user
     @JoinColumn(name = "UserID")
-    private User1 userWantsCertification;         // a single user asks for one or more certifications to be certificated.
+    private User1 userCertificates;         // a single user asks for one or more certifications to be certificated.
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "OrganizationID")
+    @JoinColumn(name = "orgID")
     private Organization orgCertification;      // the organization certification.
 
     public Certification(){}        //Empty constructor.
 
-    public Certification(int ID, String name, String type, String description,
-                         String date, int uID, String status,
-                         String document, int orgID) {  //initializing the class's properties.
-        this.ID = ID;
+    public Certification(int cerID, String name, String type, String description,
+                         String date, String status,
+                         byte[] certificateDocument, User1 userCertificates, Organization orgCertification) {  //initializing the class's properties.
+        this.cerID = cerID;
         this.Name = name;
         this.Type = type;
         this.Description = description;
         this.Date = date;
-        this.uID = uID;
         this.Status = status;
-        this.Document = document;
-        this.orgID = orgID;
+        this.certificateDocument = certificateDocument;
+        this.userCertificates=userCertificates;
+        this.orgCertification=orgCertification;
     }
 
-    public int getID() {
-        return ID;
+    //for uploadCertificate
+    public Certification(String fileName, String contentType, byte[] bytes) {
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+
+    public int getCerID() {
+        return cerID;
+    }
+
+    public void setCerID(int cerID) {
+        this.cerID = cerID;
     }
 
     public String getName() {
@@ -99,14 +101,6 @@ public class Certification {
         Date = date;
     }
 
-    public int getuID() {
-        return uID;
-    }
-
-    public void setuID(int uID) {
-        this.uID = uID;
-    }
-
     public String getStatus() {
         return Status;
     }
@@ -115,28 +109,21 @@ public class Certification {
         Status = status;
     }
 
-    public String getDocument() {
-        return Document;
+    public byte[] getDocument() {
+        return certificateDocument;
     }
 
-    public void setDocument(String document) {
-        Document = document;
+    public void setDocument(byte[] document) {
+        certificateDocument = document;
     }
 
-    public int getOrgID() {
-        return orgID;
+
+    public User1 getUserCertificationsList() {
+        return userCertificates;
     }
 
-    public void setOrgID(int orgID) {
-        this.orgID = orgID;
-    }
-
-    public User1 getUserWantsCertification() {
-        return userWantsCertification;
-    }
-
-    public void setUserWantsCertification(User1 userWantsCertification) {
-        this.userWantsCertification = userWantsCertification;
+    public void setUserCertificates(User1 userCertificates) {
+        this.userCertificates = userCertificates;
     }
 
     public Organization getOrgCertification() {

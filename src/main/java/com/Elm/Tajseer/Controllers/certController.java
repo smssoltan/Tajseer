@@ -5,6 +5,7 @@ import com.Elm.Tajseer.Models.User1;
 import com.Elm.Tajseer.Services.certService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -39,6 +40,11 @@ public class certController {
     @PutMapping("/certification/{id}")
     public Certification updateCert(@RequestBody Certification cert, @PathVariable("id") int id){
         return  cert_Service.updateCert(cert,id);
+    }
+
+    @PostMapping("/UploadCertificate")
+    public Certification uploadCertificate(@RequestParam("file") MultipartFile file) {
+        return cert_Service.uploadCertificate(file);
     }
 
 }

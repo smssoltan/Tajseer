@@ -34,7 +34,7 @@ public class orgService_Implementation implements orgService {
 
     @Override
     public Organization updateOrg(Organization org, int id) {
-        org.setID(id);
+        org.setOrgID(id);
         return orgRepo.save(org);
     }
 }

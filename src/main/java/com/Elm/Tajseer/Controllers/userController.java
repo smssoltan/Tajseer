@@ -2,6 +2,7 @@ package com.Elm.Tajseer.Controllers;
 
 import com.Elm.Tajseer.Models.User1;
 import com.Elm.Tajseer.Services.userService;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
