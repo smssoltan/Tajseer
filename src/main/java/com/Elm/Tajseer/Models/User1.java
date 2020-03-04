@@ -34,6 +34,9 @@ public class User1 {        // couldn't name it just user because of errors that
     @Column
     private long natID;
 
+    @Column(name = "Enabled")       // need to look up why we added this from Abdulmohsen's
+    private boolean enabled = true;
+
 
     // List of added certifications by the user
     @OneToMany(targetEntity =Certification.class, mappedBy = "userCertificates", cascade = CascadeType.ALL)
@@ -46,7 +49,7 @@ public class User1 {        // couldn't name it just user because of errors that
 
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "AuthID")
+    @JoinColumn(name = "authority")
     private Authority usersAuthority;
 
 
@@ -57,7 +60,7 @@ public class User1 {        // couldn't name it just user because of errors that
 
     public User1(int userID, String fullName, String dob, String pNum, String email,
                  String password, long natID, Set<Certification> certificationsList,
-                 Organization usersOrganization, Authority usersAuthority) {
+                 Organization usersOrganization, Authority usersAuthority, boolean enabled) {
         this.userID = userID;
         this.fullName = fullName;
         this.dob = dob;
@@ -68,6 +71,7 @@ public class User1 {        // couldn't name it just user because of errors that
         this.certificationsList = certificationsList;
         this.usersOrganization = usersOrganization;
         this.usersAuthority = usersAuthority;
+        this.enabled = enabled;
     }
 
 
@@ -152,5 +156,13 @@ public class User1 {        // couldn't name it just user because of errors that
 
     public void setUsersAuthority(Authority usersAuthority) {
         this.usersAuthority = usersAuthority;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

@@ -7,13 +7,12 @@ import java.util.List;
 @Entity //User Entity
 @Table(name = "AUTHORITY")
 public class Authority {
-
     @Id         //Prime key column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int AuthID;         //Authority ID
+    private String authority;
 
     @Column
-    private String Name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int AuthID;         //Authority ID
 
     @Column
     private String Description;     //Description of what can be done.
@@ -23,10 +22,10 @@ public class Authority {
 
     public Authority(){}        //empty Constructor.
 
-    public Authority(int authID, String name, String description) {
+    public Authority(int authID, String authority, String description) {
 
         this.AuthID = authID;
-        this.Name = name;
+        this.authority = authority;
         this.Description = description;
     }
 
@@ -39,12 +38,12 @@ public class Authority {
         AuthID = authID;
     }
 
-    public String getName() {
-        return Name;
+    public String getAuthority() {
+        return authority;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 
     public String getDescription() {
