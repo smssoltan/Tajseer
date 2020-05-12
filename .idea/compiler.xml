@@ -9,9 +9,6 @@
         <module name="Tajseer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Tajseer" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

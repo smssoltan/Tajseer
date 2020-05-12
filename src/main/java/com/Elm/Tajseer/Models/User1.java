@@ -1,31 +1,35 @@
 package com.Elm.Tajseer.Models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity //User Entity
 @Table(name = "USER1")
 public class User1 {        // couldn't name it just user because of errors that was caused
 
     @Id         //Prime key column
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userID;         //Prim key for the table User1
 
+    //    @NotNull(message = "First name , Last name is required")
+    //@Size(min = 3, max = 20)
     @Column
     private String fullName;
 
     @Column
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private  String dob;        //date of birth
 
     @Column
     private  String pNum;      //phone number
 
     @Column
+    //    @Email(message = "Enter a valid email address.")
+//    @Pattern(regexp=".+@.+\\.[a-z]+")
+//    @NotNull(message = "Email is required")
     private String email;
 
     @Column
@@ -40,7 +44,7 @@ public class User1 {        // couldn't name it just user because of errors that
 
     // List of added certifications by the user
     @OneToMany(targetEntity =Certification.class, mappedBy = "userCertificates", cascade = CascadeType.ALL)
-    private Set<Certification> certificationsList;
+    private List<Certification> certificationsList = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "orgID")
@@ -49,8 +53,8 @@ public class User1 {        // couldn't name it just user because of errors that
 
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "authority")
-    private Authority usersAuthority;
+    @JoinColumn(name = "authName")
+    private Authority authority;
 
 
 
@@ -59,8 +63,7 @@ public class User1 {        // couldn't name it just user because of errors that
 
 
     public User1(int userID, String fullName, String dob, String pNum, String email,
-                 String password, long natID, Set<Certification> certificationsList,
-                 Organization usersOrganization, Authority usersAuthority, boolean enabled) {
+                 String password, long natID, boolean enabled) {
         this.userID = userID;
         this.fullName = fullName;
         this.dob = dob;
@@ -68,9 +71,6 @@ public class User1 {        // couldn't name it just user because of errors that
         this.email = email;
         this.password = password;
         this.natID = natID;
-        this.certificationsList = certificationsList;
-        this.usersOrganization = usersOrganization;
-        this.usersAuthority = usersAuthority;
         this.enabled = enabled;
     }
 
@@ -134,11 +134,11 @@ public class User1 {        // couldn't name it just user because of errors that
         this.natID = natID;
     }
 
-    public Set<Certification> getCertificationsList() {
+    public List<Certification> getCertificationsList() {
         return certificationsList;
     }
 
-    public void setCertificationsList(Set<Certification> certificationsList) {
+    public void setCertificationsList(List<Certification> certificationsList) {
         this.certificationsList = certificationsList;
     }
 
@@ -150,12 +150,12 @@ public class User1 {        // couldn't name it just user because of errors that
         this.usersOrganization = usersOrganization;
     }
 
-    public Authority getUsersAuthority() {
-        return usersAuthority;
+    public Authority getAuthority() {
+        return authority;
     }
 
-    public void setUsersAuthority(Authority usersAuthority) {
-        this.usersAuthority = usersAuthority;
+    public void setAuthority(Authority authority) {
+        this.authority = authority;
     }
 
     public boolean isEnabled() {

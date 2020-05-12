@@ -10,7 +10,8 @@ public class TajseerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TajseerApplication.class, args);
-		System.out.println(new BCryptPasswordEncoder().encode("123456"));
+		System.out.println(new BCryptPasswordEncoder().encode("123456Ms"));
+		System.out.println(new BCryptPasswordEncoder().encode("123456Sa"));
 
 	}
 

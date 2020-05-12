@@ -42,18 +42,16 @@ public class Certification {
 
     public Certification(){}        //Empty constructor.
 
-    public Certification(int cerID, String name, String type, String description,
+    public Certification( String name, String type, String description,
                          String date, String status,
-                         byte[] certificateDocument, User1 userCertificates, Organization orgCertification) {  //initializing the class's properties.
-        this.cerID = cerID;
+                         byte[] certificateDocument) {  //initializing the class's properties.
         this.Name = name;
         this.Type = type;
         this.Description = description;
         this.Date = date;
         this.Status = status;
         this.certificateDocument = certificateDocument;
-        this.userCertificates=userCertificates;
-        this.orgCertification=orgCertification;
+
     }
 
     //for uploadCertificate
@@ -118,7 +116,7 @@ public class Certification {
     }
 
 
-    public User1 getUserCertificationsList() {
+    public User1 getuserCertificates() {
         return userCertificates;
     }
 

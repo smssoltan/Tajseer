@@ -27,7 +27,7 @@ public class Organization {
 
 
     @OneToMany(targetEntity = User1.class , mappedBy = "usersOrganization", cascade = CascadeType.ALL)
-    private Set<User1> usersList;     // List of users that are asking for certification.
+    private List<User1> usersList = new ArrayList<>();     // List of users that are asking for certification.
 
     public Organization(){}     //empty constructor.
 
@@ -80,11 +80,11 @@ public class Organization {
         this.toBeCertificated = toBeCertificated;
     }
 
-    public Set<User1> getUsersList() {
+    public List<User1> getUsersList() {
         return usersList;
     }
 
-    public void setUsersList(Set<User1> usersList) {
+    public void setUsersList(List<User1> usersList) {
         this.usersList = usersList;
     }
 }
